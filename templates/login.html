@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Register yourself to access all the resources and materials available on E-Material. You can access all the study materials, quizzes, projects, and more by registering yourself." />
+    <meta name="keywords"
+        content="register, registration, e-material, study materials, quizzes, projects, resources, educational resources, learning resources, online learning, online resources, online education, free resources, free materials, free study materials, free quizzes, free projects, free resources, free educational resources, free online resources, free online learning, free online education" />
+
+
+    <link rel="shortcut icon" href="{% static 'imgs/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'style.css'%}" />
+    <link rel="stylesheet" href="{% static 'responsive.css'%}" />
+    <title>Registration | E-Material</title>
+</head>
+
+<body oncontextmenu="return false;">
+    <nav id="nav1">
+        <div id="nav-logo">
+            <a href="{% url 'Index' %}"><img src="{% static 'imgs/logo.png' %}" alt="" /></a>
+        </div>
+
+        <div id="sub-manu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div id="nav-ops">
+            <a href="{% url 'Index' %}">HOME</a>
+            <a href="{% url 'Materials' %}">MATERIALS</a>
+            <a href="{% url 'Videos' %}">VIDEOS</a>
+            <a href="{% url 'Blogs' %}">BLOGS</a>
+            <a href="{% url 'QT' %}">QUIZ</a>
+            <a href="{% url 'Contact' %}">CONTACT US</a>
+            <a href="{% url 'Exchange' %}">Exchange BOOK</a>
+        </div>
+
+        <div class="Sign">
+            <a href="{% url 'Login' %}" ><button class="login btn-edu">Login</button></a>
+            <a href="{% url 'Register' %}" ><button class="register btn-edu">Register</button></a>
+          </div>
+    </nav>
+
+    <div class="main">
+        <div class="form-wrapper">
+            <h2 class="form-title">Login E-Material</h2>
+            <form method="POST" action="{% url 'Login' %}">
+                {% csrf_token %}
+                <div class="input-wrapper">
+                    <label>E-Mail</label>
+                    <input class="form-input" type="email" name="umail" required="" />
+                </div>
+                <div class="input-wrapper">
+                    <label>Password</label>
+                    <input class="form-input" type="password" name="upass" required="" />
+                </div>
+                <a href="javascript:void(0)" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <button type="submit" class="regi-submit-btn">LOGIN</button>
+                    {% if error %}
+                        <p>{{ error }}</p>
+                    {% endif %}
+                </a>
+            </form>
+            <p class="signup-alrt">Create an account <a href="{% url 'Register' %}">Register</a></p> 
+        </div>
+    </div>
+
+    <footer>
+        <div id="foot-part1">
+            <div id="foot-logo">
+                <a href=""><img src="{% static 'imgs/logo.png' %}" alt="" /></a>
+            </div>
+            <div id="file_upload">
+                <p>
+                    If you have any engineering related notes or pdfs please upload
+                    here.
+                    <br />
+                </p>
+                <button>
+                    <a href=https://forms.gle/LwjeQHZBgtWu8g82A class="a">upload here</a>
+                </button>
+            </div>
+            <div id="follow-us">
+                <h3>FOLLOW US</h3>
+                <section class="row" id="icon-pack-2">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/share/aifVJJU1jva6Zxkq/?mibextid=qi2Omg"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="mailto:e.material.study@gmail.com"><i class="fa fa-google-plus"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/study_ematerial?utm_source=qr&igsh=cDRkbGhlODUxbGRt"><i
+                                    class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div id="foot-part3">
+            <p>&copy; 2024 E-MATERIAL. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script src="{% static 'app.js'%}"></script>
+    <script>
+        navanimetion()
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4EGBKYCZE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T4EGBKYCZE');
+    </script>
+</body>
+
+</html>

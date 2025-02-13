@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Access a wide range of study materials including notes, projects, quizzes, and more to enhance your learning experience." />
+  <meta name="keywords"
+    content="study materials, notes, projects, quizzes, engineering resources, diploma materials, degree study content" />
+
+
+  <link rel="shortcut icon" href="{% static 'imgs/logo.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <title>Study Materials | E-Material</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+</head>
+
+<body>
+  <nav id="nav1">
+    <div id="nav-logo">
+      <a href="{% url 'Index' %}"><img src="{% static 'imgs/logo.png' %}" alt="" /></a>
+    </div>
+
+
+    <div id="sub-manu">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="nav-ops">
+      <a href="{% url 'Index' %}">HOME</a>
+      <a href="{% url 'Materials' %}">MATERIALS</a>
+      <a href="{% url 'Videos' %}">VIDEOS</a>
+      <a href="{% url 'Blogs' %}">BLOGS</a>
+      <a href="{% url 'QT' %}">QUIZ</a>
+      <a href="{% url 'Contact' %}">CONTACT US</a>
+      <a href="{% url 'Exchange' %}">Exchange BOOK</a>
+    </div>
+
+    <div class="searchBar" id="nav-search">
+      <i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search..." id="searchBar" name="searchBar"
+        type="text">
+    </div>
+  </nav>
+
+  <nav id="nav2">
+    <filter-section id="file-filter-section">
+      <div class="dropdown">
+        <div class="select">
+          <span class="selected">Courses</span>
+          <div class="caret"></div>
+        </div>
+        <ul class="menu">
+          <li class="active">All</li>
+          <li class="course-select">Diploma</li>
+          <li class="course-select">ITI</li>
+          <li class="course-select">BCA</li>
+          <li class="course-select">B.Com</li>
+          <li class="course-select">B.Tech</li>
+          <li class="course-select">B.Sc It</li>
+        </ul>
+      </div>  
+      <div class="dropdown">
+        <div class="select">
+          <span class="selected">Branch</span>
+          <div class="caret"></div>
+        </div>
+        <ul class="menu">
+          <li class="active">All</li>
+          <li class="branch-select">Computer</li>
+          <li class="branch-select">IT</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <div class="select">
+          <span class="selected">Type</span>
+          <div class="caret"></div>
+        </div>
+        <ul class="menu">
+          <li class="active">All</li>
+          <li class="subject-select">Notes</li>
+          <li class="subject-select">Assignment</li>
+          <li class="subject-select">Lab Manual</li>
+          <li class="subject-select">IMP</li>
+          <li class="subject-select">Paper</li>
+          <li class="subject-select">Project</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <div class="select">
+          <span class="selected">Language</span>
+          <div class="caret"></div>
+        </div>
+        <ul class="menu">
+          <li class="active">All</li>
+          <li class="language-select">English</li>
+          <li class="subject-select">Hindi</li>
+          <li class="subject-select">Gujarati</li>
+      </div>
+    </filter-section>
+  </nav>
+  <main>
+    <div class="body">
+      <div id="root" class="data-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="foot-part1">
+      <div id="foot-logo">
+        <a href=""><img src="{% static 'imgs/logo.png' %}" alt="E-MATERIAL LOGO" /></a>
+      </div>
+      <div id="file_upload">
+        <p>
+          If you have any engineering related notes or pdfs please upload
+          here.
+          <br />
+        </p>
+        <button>
+          <a href="https://forms.gle/LwjeQHZBgtWu8g82A" class="a">upload here</a>
+        </button>
+      </div>
+      <div id="follow-us">
+        <h3>FOLLOW US</h3>
+        <section class="row" id="icon-pack-2">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/share/aifVJJU1jva6Zxkq/?mibextid=qi2Omg"><i class="fa fa-facebook"
+                  aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="mailto:e.material.study@gmail.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/study_ematerial?utm_source=qr&igsh=cDRkbGhlODUxbGRt"><i
+                  class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div id="foot-part3">
+      <p>&copy; 2024 E-MATERIAL. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{% static 'app.js' %}"></script>
+  <script>
+    pdfs_blogs();
+    dropdown();
+    navanimetion()
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4EGBKYCZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T4EGBKYCZE');
+  </script>
+</body>
+
+</html>

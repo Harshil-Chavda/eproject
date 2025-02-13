@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Explore insightful blogs on study tips, coding, career guidance, and more to enhance your learning and skills." />
+  <meta name="keywords"
+    content="blogs, study tips, coding blogs, career guidance, learning resources, student blogs, skill development" />
+  
+  <meta name="author" content="E-Material">
+
+  <link rel="shortcut icon" href="{% static 'imgs/logo.png'%}" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'style.css'%}" />
+  <link rel="stylesheet" href="{% static 'responsive.css'%}" />
+  <title>Blogs | E-Material</title>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+</head>
+
+<body>
+  <nav id="nav1">
+    <div id="nav-logo">
+      <a href="{% url 'Index' %}"><img src="{% static 'imgs/logo.png' %}" alt="" /></a>
+    </div>
+
+
+    <div id="sub-manu">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="nav-ops">
+      <a href="{% url 'Index' %}">HOME</a>
+      <a href="{% url 'Materials' %}">MATERIALS</a>
+      <a href="{% url 'Videos' %}">VIDEOS</a>
+      <a href="{% url 'Blogs' %}">BLOGS</a>
+      <a href="{% url 'QT' %}">QUIZ</a>
+      <a href="{% url 'Contact' %}">CONTACT US</a>
+      <a href="{% url 'Exchange' %}">Exchange BOOK</a>
+    </div>
+
+
+    <div class="searchBar" id="nav-search">
+      <i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search..." id="searchBar" name="searchBar"
+        type="text">
+    </div>
+  </nav>
+
+
+
+  <main>
+    <div class="body">
+      <div id="blogs" class="data-container"></div>
+    </div>
+  </main>
+
+
+
+  <footer>
+    <div id="foot-part1">
+      <div id="foot-logo">
+        <a href=""><img src="{% static 'imgs/logo.png' %}" alt="" /></a>
+      </div>
+      <div id="file_upload">
+        <p>
+          If you have any engineering related notes or pdfs please upload
+          here.
+          <br />
+        </p>
+        <button>
+          <a href="https://forms.gle/LwjeQHZBgtWu8g82A" class="a">upload here</a>
+        </button>
+      </div>
+      <div id="follow-us">
+        <h3>FOLLOW US</h3>
+        <section class="row" id="icon-pack-2">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/share/aifVJJU1jva6Zxkq/?mibextid=qi2Omg"><i class="fa fa-facebook"
+                  aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="mailto:e.material.study@gmail.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/study_ematerial?utm_source=qr&igsh=cDRkbGhlODUxbGRt"><i
+                  class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div id="foot-part3">
+      <p>&copy; 2024 E-MATERIAL. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{% static 'app.js'%}"></script>
+  <script>
+    blogs();
+    navanimetion();
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4EGBKYCZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T4EGBKYCZE');
+  </script>
+</body>
+
+</html>
